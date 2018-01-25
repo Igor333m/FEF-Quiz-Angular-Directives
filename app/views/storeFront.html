@@ -1,0 +1,14 @@
+<div ng-controller="legoStore as lego">
+	<h1 id="storeHeading">{{lego.name}}</h1>
+	<p id="brickColors">We currently carry {{lego.brickColors.length}} color choices!</p>
+	<ul id="colorList">
+		<li ng-repeat="(color, brick) in lego.bricks" id="color-{{color}}">
+			<p>{{color}}</p>
+			<div ng-repeat="(size, values) in brick" class="brick-{{size}}">
+				<p>Size: {{size}}</p>
+				<p>Quantity: {{values.quantity}}</p>
+				<p>Price: {{values.price}}</p>
+			</div>
+		</li>
+	</ul>
+</div>

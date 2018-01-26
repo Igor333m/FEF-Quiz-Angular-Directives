@@ -61,7 +61,7 @@ body {
 }
 
 /* Responsive: Portrait tablets and up */
-/*@media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) {
   .container {
     max-width: 730px;
   }
@@ -81,7 +81,7 @@ body {
   .jumbotron {
     border-bottom: 0;
   }
-}*/
+}
 
 #colorList,
 #colorList ul {
@@ -104,6 +104,7 @@ body {
   width: 10em;
   top: 0.4em;
   right: -2.8em;
+  color: white;
 }
 
 .coming-soon {
@@ -123,10 +124,7 @@ button:disabled {
   color: grey;
 }
 
-p + div {
-  margin-left: 50px;
 
-}
 
 div[class*="brick"] {
   background-color: #eee;

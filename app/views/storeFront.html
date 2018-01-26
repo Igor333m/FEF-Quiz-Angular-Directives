@@ -5,9 +5,13 @@
 		<li ng-repeat="(color, brick) in lego.bricks" id="color-{{color}}">
 			<p>{{color}}</p>
 			<div ng-repeat="(size, values) in brick" class="brick-{{size}}">
+				<span ng-if="values.quantity < 10" class="low-stock"></span>
 				<p>Size: {{size}}</p>
 				<p>Quantity: {{values.quantity}}</p>
 				<p>Price: {{values.price}}</p>
+				<p ng-if="values.quantity < 5" class="coming-soon"> More on the way!</p>
+				<button class="buyButton">Buy</button>
+				<button class="returnButton">Return</button>
 			</div>
 		</li>
 	</ul>

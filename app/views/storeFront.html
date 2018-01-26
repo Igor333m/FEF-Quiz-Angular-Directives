@@ -1,18 +1,20 @@
 <div ng-controller="legoStore as lego">
 	<h1 id="storeHeading">{{lego.name}}</h1>
 	<p id="brickColors">We currently carry {{lego.brickColors.length}} color choices!</p>
-	<ul id="colorList">
-		<li ng-repeat="(color, brick) in lego.bricks" id="color-{{color}}">
-			<p>{{color}}</p>
-			<div ng-repeat="(size, values) in brick" class="brick-{{size}}">
-				<span ng-if="values.quantity < 10" class="low-stock"></span>
-				<p>Size: {{size}}</p>
-				<p>Quantity: {{values.quantity}}</p>
-				<p>Price: {{values.price}}</p>
-				<p ng-if="values.quantity < 5" class="coming-soon"> More on the way!</p>
-				<button class="buyButton">Buy</button>
-				<button class="returnButton">Return</button>
-			</div>
-		</li>
-	</ul>
+	<div id="colorList">
+		<ul ng-repeat="(color, brick) in lego.bricks" id="color-{{color}}">
+			<li>
+				<p>{{color}}</p>
+				<div ng-repeat="(size, values) in brick" class="brick-{{size}}">
+					<div ng-if="values.quantity < 10" class="low-stock"></div>
+					<p>Size: {{size}}</p>
+					<p>Quantity: {{values.quantity}}</p>
+					<p>Price: {{values.price}}</p>
+					<p ng-if="values.quantity < 5" class="coming-soon"> More on the way!</p>
+					<button class="buyButton" ng-click="lego.buy(values)">Buy</button>
+					<button class="returnButton" ng-click="lego.return(values)" ng-disabled="values.quantity === 0">Return</button>
+				</div>
+			</li>
+		</ul>
+	</div>
 </div>

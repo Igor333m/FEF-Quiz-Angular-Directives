@@ -48,4 +48,12 @@ angular.module('directivesQuizApp')
         }
       }
     };
+
+    this.buy = number => {
+      number.quantity += 1;
+    };
+
+    this.return = number => {
+      number.quantity -= 1;
+    };
   });

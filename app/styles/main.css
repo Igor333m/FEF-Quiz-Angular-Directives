@@ -61,7 +61,7 @@ body {
 }
 
 /* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
+/*@media screen and (min-width: 768px) {
   .container {
     max-width: 730px;
   }
@@ -81,7 +81,7 @@ body {
   .jumbotron {
     border-bottom: 0;
   }
-}
+}*/
 
 #colorList,
 #colorList ul {
@@ -92,17 +92,18 @@ body {
   overflow: hidden;
 }
 
-#colorList .low-stock::before {
-  background: white;
-  box-shadow: 1px 1px 5px rgba(146, 142, 142, 0.5);
+#colorList .low-stock::after {
+  border: 25px solid transparent;
+  border-bottom: 25px solid #ccc;
+  /*box-shadow: 1px 1px 5px rgba(146, 142, 142, 0.5);*/
   content: 'low stock!';
   text-align: center;
   transform: rotate(45deg);
   position: absolute;
   height: 1.5em;
   width: 10em;
-  top: 2.3em;
-  right: -2.5em;
+  top: 0.4em;
+  right: -2.8em;
 }
 
 .coming-soon {
@@ -117,4 +118,21 @@ body {
 
 .glyphicon-heart::before {
   transition: 0.25s color;
+}
+button:disabled {
+  color: grey;
+}
+
+p + div {
+  margin-left: 50px;
+
+}
+
+div[class*="brick"] {
+  background-color: #eee;
+  display: inline-block;
+  padding: 25px;
+  vertical-align: top;
+  border: 1px solid #ccc;
+  position: relative;
 }
